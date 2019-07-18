@@ -2,39 +2,39 @@
 
 import argparse
 
+#time complexity: O(n^2) solution, space complexity: O(1) ?
+#recursive solution?
 def find_max_profit(prices):
 
-  curr_min_price = 0
-  curr_max_price = 0
-  min_search_list =[]
+  current_max_profit = False #O(1)
 
-  [1050, 270, 1540, 3800, 2]
+  #start backwards
+  #loop through price list
+  #[100, 90, 80, 50, 20, 10]
+  for i in range(len(prices) -1,-1,-1):#O(n)
 
-  
-  
-  for i in range (len(prices) -1):
+      #for each price
+      
+      #loop backward through prices in slices without current value
+      #for each loop subtract and compare with current profit, modifying if greater
+      #at end return profit
 
-    if prices[i] > curr_max_price:
-      curr_max_price = prices[i]
+    sell_price = prices[i] 
 
-    
-    
-  min_search_list = prices[:prices.index(curr_max_price)]
-  print("HELLO",min_search_list)
-  curr_min_price = min_search_list[0]
+    for j in range(len(prices[:i]) -1,-1,-1):#0(n)
+      
+      buy_price = prices[j]
+      comparison_profit = sell_price - buy_price
 
-  
+      if current_max_profit:#needed for very first comparison
+        if comparison_profit > current_max_profit:
+          current_max_profit = comparison_profit
 
-  for i in range(len(min_search_list) -1):
-    if min_search_list[i] < min_search_list[i +1]:
-      curr_min_price = min_search_list[i]
-
-   
-
-
+      else:
+        current_max_profit = comparison_profit
 
 
-  return curr_max_price - curr_min_price
+  return current_max_profit
 
 
 
