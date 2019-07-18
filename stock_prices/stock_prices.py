@@ -6,7 +6,7 @@ def find_max_profit(prices):
 
   curr_min_price = 0
   curr_max_price = 0
-  min_search_list =False
+  min_search_list =[]
 
   [1050, 270, 1540, 3800, 2]
 
