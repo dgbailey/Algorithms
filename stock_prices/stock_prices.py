@@ -3,7 +3,39 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+
+  curr_min_price = 0
+  curr_max_price = 0
+  min_search_list =False
+
+  [1050, 270, 1540, 3800, 2]
+
+  
+  
+  for i in range (len(prices) -1):
+
+    if prices[i] > curr_max_price:
+      curr_max_price = prices[i]
+
+    
+    
+  min_search_list = prices[:prices.index(curr_max_price)]
+  print("HELLO",min_search_list)
+  curr_min_price = min_search_list[0]
+
+  
+
+  for i in range(len(min_search_list) -1):
+    if min_search_list[i] < min_search_list[i +1]:
+      curr_min_price = min_search_list[i]
+
+   
+
+
+
+
+  return curr_max_price - curr_min_price
+
 
 
 if __name__ == '__main__':
